@@ -35,6 +35,30 @@ const customIconClicked = {
     strokeWeight: 3
 };
 
+let previousMarker = undefined;
+let previousDialog = undefined;
+
+const dealWithMarker = (marker) => {
+    if(previousMarker !== undefined){
+        previousMarker.setIcon(customIcon)
+        previousDialog.close()
+    }
+
+    marker.setIcon(customIconClicked);
+        
+    var infowindow = new google.maps.InfoWindow({
+        content: `<p style="font-weight: bold; font-size:17px;">${marker.title}</p>`
+    });
+    infowindow.open(marker.get("map"), marker);
+    infowindow.addListener('closeclick', () => {
+        marker.setIcon(customIcon);
+    })
+
+    //Salva o marker anterior clicado
+    previousMarker = marker;
+    previousDialog = infowindow;
+}
+
 function addMarker(marker) {
     var marker = new google.maps.Marker({
         map: map,
@@ -43,18 +67,9 @@ function addMarker(marker) {
         title: marker.name
     });
 
-    //Muda de cor e mostra title  ao clicar na localizacao
+    //Deal with click event
     marker.addListener("click", function () {
-        marker.setIcon(customIconClicked);
-
-        var infowindow = new google.maps.InfoWindow({
-            content: `<p style="font-weight: bold; font-size:17px;">${marker.title}</p>`
-        });
-        infowindow.open(marker.get("map"), marker);
-        infowindow.addListener('closeclick', () => {
-            marker.setIcon(customIcon);
-        })
-
+        dealWithMarker(marker)
     });
 }
 
