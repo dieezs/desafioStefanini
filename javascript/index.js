@@ -26,12 +26,26 @@ const customIcon = {
     strokeWeight: 3
 };
 
+const customIconClicked = {
+    path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
+    fillColor: '#fff',
+    fillOpacity: 0.98,
+    scale: 0.98,
+    strokeColor: '#666666',
+    strokeWeight: 3
+};
+
 function addMarker(marker) {
     var marker = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(marker.lat, marker.lng),
         icon: customIcon,
         title: marker.name
+    });
+
+    marker.addListener("click", function() {
+        console.log(marker)
+        marker.setIcon(customIconClicked)
     });
 }
 
@@ -54,9 +68,6 @@ function initMap() {
     };
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-    //Adicionando o primeiro marcador como exemplo
-   
 
     placesOfInterest.map(local => {
         addMarker(local)
