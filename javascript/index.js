@@ -51,6 +51,9 @@ function addMarker(marker) {
             content: `<p style="font-weight: bold; font-size:17px;">${marker.title}</p>`
         });
         infowindow.open(marker.get("map"), marker);
+        infowindow.addListener('closeclick', () => {
+            marker.setIcon(customIcon);
+        })
 
     });
 }
