@@ -43,9 +43,15 @@ function addMarker(marker) {
         title: marker.name
     });
 
-    marker.addListener("click", function() {
-        console.log(marker)
-        marker.setIcon(customIconClicked)
+    //Muda de cor e mostra title  ao clicar na localizacao
+    marker.addListener("click", function () {
+        marker.setIcon(customIconClicked);
+
+        var infowindow = new google.maps.InfoWindow({
+            content: `<p style="font-weight: bold; font-size:17px;">${marker.title}</p>`
+        });
+        infowindow.open(marker.get("map"), marker);
+
     });
 }
 
