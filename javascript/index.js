@@ -39,13 +39,13 @@ let previousMarker = undefined;
 let previousDialog = undefined;
 
 const dealWithMarker = (marker) => {
-    if(previousMarker !== undefined){
+    if (previousMarker !== undefined) {
         previousMarker.setIcon(customIcon)
         previousDialog.close()
     }
 
     marker.setIcon(customIconClicked);
-        
+
     var infowindow = new google.maps.InfoWindow({
         content: `<p style="font-weight: bold; font-size:17px;">${marker.title}</p>`
     });
@@ -92,6 +92,22 @@ function initMap() {
     };
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    infoWindow = new google.maps.InfoWindow();
+
+    navigator.geolocation
+        ? navigator.geolocation.getCurrentPosition(getPosition)
+        : window.alert("Geolocation is not supported by this browser.")
+
+    function getPosition(position) {
+        const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        }
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Desafio cumprido!");
+        infoWindow.open(map);
+        map.setCenter(pos);
+    }
 
     placesOfInterest.map(local => {
         addMarker(local)
