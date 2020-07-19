@@ -3,16 +3,18 @@
 ## Javascript Questão 2:
 
 ### a) No import da api do google maps no index.html, para que servem as tags async e defer?
-R: 
+R: Ambas as tags sao responsaveis por carregar scripts externos sem comprometer a renderizacao da pagina HTML em si. O ASYNC faz o download dos scripts sem parar o processo de renderizacao da pagina, eh executado a a qualquer momento e em qualquer ordem, sera carregado de forma assincrona. O DEFER tambem eh responsavel pelo download mas eles so sao baixados apos a renderizacao da pagina estar completa e a ordem de download eh sempre respeitada, baixando um de cada vez.
 
 ### b) Para que serve o parâmetro &callback=initMap na url da api do google maps?
-R: 
+R: Serve para inicializar, de forma assincrona, uma nova instancia do mapa a ser visualizado. Assim que receber a resposta da API, o mapa eh carregado.
 
 ### c) O que acontece quando removemos o parâmetro &callback=initMap da url da api do google maps? Explique o porque.
-R: 
+R: O mapa nao eh inicializado pois nao eh chamado de uma forma assincrona na API. Deve-se esperar a resposta "ficar pronta" para devolver o mapa. Quando removemos o callback, nao esperamos a reposta e "voltamos" sem nenhuma resposta.
 
 ### d) Descreva pelo menos uma forma de como podemos fazer com que a aplicação funcione corretamente mesmo sem este parâmetro.
-R: 
+R: Uma outra forma de fazer com que aplicacao funcione sem este parametro, segundo a API do Google Maps, eh fazer um arquivo .js a parte e importa-lo para nosso arquivo index.html. A forma como esta sendo utilizado hoje eh Inline Loading, podemos utilizar o Dynamic Loading segundo a API do Google.
+
+Fontes: https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
 
 ### e) Explique para que servem as seguintes tags do index.html: 
   `<link rel="manifest" href="manifest.json">
@@ -20,10 +22,10 @@ R:
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">`
 
-R:
+R: A tag LINK eh usada para importar um arquivo, seja ele CSS, json ou ate um icone para o favicon. Na TAG META eh definido algumas informacoes sobre o site, palavras-chaves para encontrar o site ou o view-port utilizado para mobile. No caso da aplicacao em questao, eh utilizado o link para referenciar um arquivo json Manifesto de Web App. A tag meta name="theme-color" serve para alterar a cor do tema que envolve o site. o name="apple-mobile-web-app-capable" fala que o site possa ou não ser executada em modo tela cheia em um dispositivo Apple, dependendo do valor que está dentro do atributo content. name="apple-mobile-web-app-status-bar-style" é responsável por estilizar a barra de progresso de um site quando o mesmo aberto por um dispositivo Apple.
 
 ### f) Está aplicação pode ser considerada um PWA? Em caso negativo, explique o que falta para que seja.
-R:
+R: Embora tenha alguns conceitos, como as tags acimas utilizadas para o mobile, nao pode ser considerado uma PWA. Para ser considerado uma PWA, a aplicacao deve utilizar mais recursos, nao somente se consumir de um recurso da API do Google Maps.
 
 
 ## Angular Questão 4:
