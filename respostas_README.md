@@ -62,10 +62,10 @@ R:
 R: 
 
 ### d) Para que servem os comandos async e await, encontrados na função presentLoading do arquivo home.page.ts?
-R:
+R: o Async serve para identificar que a funcao eh assincrona e o Await serve para identificar que uma chamada a outra funcao ou um uma funcao de outro componente pode demorar para responder, sendo assim, utilizamos o await para retornar a resposta quando a mesma estiver pronta. 
 
 ### e) Quais as vantagens de utilizar async/await em códigos javascript/typescript?
-R:
+R: A vantagem eh que se pode usar funcoes assincronas em codigo sincrono. Podemos consumir qualquer recurso de API e obter a resposta quando a mesma estiver "pronta". Isso nao acaba travando sua aplicacao e fazendo a mesma ficar em esper.
 
 ### f) Explique para que serve a seguinte lib encontrada no arquivo home.page.ts import * as _ from 'lodash';
 R:
