@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+header{
+    background-color: #2b324f;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.titleTiny{
+    font-size:12px;
+}
+
+.titleMedium{
+    font-size:20px;
+}
+
+.iconInfo{
+    position:relative;
+    top:5px;
+    left:10px;
+}
+
+.farmacia{
+    width: 350px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.aberto{
+    width: 110px;
+    font-size:12px;
+    padding:2px;
+    border-radius: 50px;
+    border: 1px solid #2b324f;
+    background-color: #6d7286;
+}
+
+.colorActive{
+    color: green;
+}
+
+.active{
+    position: relative; 
+    top:-5px;
+}
+
+.iconArrow{
+    position: relative;
+    top:5px;
+}
+
+.right{
+    width: 220px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.photo{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 100%;
+    border: 3px solid rgb(167, 167, 167);
+}
+
+.nameProfile{
+    margin-top: 10px;
+}
+
+.breadcrumb{
+    background-color: #494f68;
+    color: white;
+    padding:20px;
+}
+
+.back{
+    text-transform: uppercase;
+    float: left;
+}
+
+.iconBack{
+    position:relative;
+    top:5px;
+}
+
+.titleBreadcrumb{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.promocao{
+    width: 100%;
+    height: auto;
+    background: url('https://static.videezy.com/system/resources/thumbnails/000/009/592/original/white-points-and-lines-going-up-on-blue-background-with-dots.jpg');
+    color: white;
+    text-align: center;
+}
+.titlePromocao{
+    max-width: 480px;
+    margin: 0 auto;
+    font-size:45px;
+    font-weight: 500;
+    text-align: left;
+}
+.search{
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    padding:20px;
+}
+
+.titleSearch{
+    color: red;
+    font-size:20px;
+    margin-top:10px
+}
+
+.validar{
+    width: 120px;
+    background-color: #a91217;
+    border-radius: 10px;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.iconSearch{
+    position: relative;
+    top: 5px
+}
+
+.iconBook{
+    position: relative;
+    top:5px;
+}
+
+.invalid{
+    width: 430px;
+    margin: 0 auto;
+    background-color: #895d7a;
+    border-radius: 10px;
+    text-align: left;
+    padding:5px;
+}
+
+.segundaParte{
+    display:flex;
+    justify-content: space-between;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-right: 300px;
+}
+.itemSide{
+    width: 190px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemCard{
+    background-color: #2b324f;
+    color: white;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.itemPromocao{
+    width: 200px;
+}
+
+.sorteioPromocao{
+    width: 200px;
+    font-size:14px;
+}
+
+.numbers{
+    border-radius: 10px;
+    border: 1px solid white;
+    padding:10px
+}
+.numeros{
+    font-weight: bold;
+}
+
+.Notnumbers{
+    text-align: center;
+}
+
+.naoParticipando{
+    font-weight: 200;
+}
+
+.link{
+    color: white
+}
+
+footer{
+    background-color: #2b324f;
+    height: 400px;
+}
+
+.textFooter{
+    color:grey;
+}
+
+hr{
+    opacity: 0.3;
+    margin: 0 auto;
+    width: 30px;
+}
